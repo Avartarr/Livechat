@@ -6,18 +6,9 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ setUser }) => {
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (!username || !password) return;
-  //   setUser({ username: username, password: password });
-  //   navigate("/chat");
-  // };
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
@@ -63,48 +54,7 @@ const Login = ({ setUser }) => {
           </h2>
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
-          {/* <Formik>
-            <Form
-              className="space-y-6 mx-16"
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
-            >
-              <div>
-                <label htmlFor="username">Username:</label>
-                <Field
-                  id="username"
-                  type="text"
-                  value = {username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="field shadow-xl ring-1 ring-inset ring-purple-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-                <ErrorMessage name="username" />
-              </div>
-              <div>
-                <label htmlFor="password">Password:</label>
-                <Field
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange = {(e) => setPassword(e.target.value)}
-                  className=" field shadow-xl ring-1 ring-inset ring-purple-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-                <ErrorMessage name="password" />
-              </div>
-              <Link to="/forgotpassword">Forgot Password?</Link>
-              <div className="text-center pb-6">
-                <button
-                  type="submit"
-                  className="button"
-                >
-                  Submit
-                </button>
-                <p>Don't have an account? 
-                    <Link to="/register"> Register</Link>
-                </p>
-              </div>
-            </Form>
-          </Formik> */}
+         
            <Formik
             initialValues={{ username: "", password: "" }}
             validationSchema={validationSchema}
